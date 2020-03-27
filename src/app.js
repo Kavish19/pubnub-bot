@@ -3,15 +3,16 @@ const express = require("express");
 const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
+const url = "https://gupshup-pubnub-bot.herokuapp.com";
 
-app.get('/api/botuser', (req,res)=> {
+app.get(url+'/api/botuser', (req,res)=> {
 
   res.send("Hi there, I am Max - your virtual assistant from ABC wallet How can I help you ?\n Type 1 for Last transaction details.\n Type 2 for Statement \n Type 3 to know more about our Value Added Services  \n Type 4 to talk to a real agent");
     
 
 })
 
-app.post("/api/botuser", (req, res) => {
+app.post(url + "/api/botuser", (req, res) => {
   var inboundPayload = req.body;
   console.log("inboundPayload", inboundPayload);
   var message = inboundPayload.payload.payload.text;
