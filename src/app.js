@@ -4,12 +4,12 @@ const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
-// app.get('/api/botuser', (req,res)=> {
+app.get('/api/botuser', (req,res)=> {
 
-//     res.send("<h2>Hi there, I am Max- your virtual assistant from ABC wallet How can I help you?</h2>" + "<br>" +
-//     "<ol><li>Type 1 for Last transaction details</li><li>Type 2 for Statement </li><li>Type 3 to know more about our Value Added Services</li><li>Type 4 to talk to a real agent</li></ol>")
+  res.send("Hi there, I am Max - your virtual assistant from ABC wallet How can I help you ?\n Type 1 for Last transaction details.\n Type 2 for Statement \n Type 3 to know more about our Value Added Services  \n Type 4 to talk to a real agent");
+    
 
-// })
+})
 
 app.post("/api/botuser", (req, res) => {
   var inboundPayload = req.body;
